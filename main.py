@@ -11,14 +11,25 @@ myList=[]
 # initializing split word 
 spl_word = '/'
 myListWithoutSlash=[]
-for file_name in glob.iglob(str(pathlib.Path(__file__).parent.absolute())+ '/imgs/*.jpeg', recursive=True):
+for file_name in glob.iglob(str(pathlib.Path(__file__).parent.absolute())+ '/imgs/*.*', recursive=True):
   print(file_name)
   myList.append(file_name)
   # using split() 
   # Get String after substring occurrence 
   res = file_name.split('/')
-  res= [item for item in res if "jpeg" in item or "JPEG" in item or "png" in item or "PNG" in item or "jpg" in item or "JPG" in item]
-  myListWithoutSlash.append(res)
+  for item in res:
+      if "jpeg" in item:
+        myListWithoutSlash.append(res)
+      if "JPEG" in item:
+        myListWithoutSlash.append(res)
+      if "png" in item:
+        myListWithoutSlash.append(res)
+      if "PNG" in item:
+        myListWithoutSlash.append(res)
+      if "jpg" in item:
+        myListWithoutSlash.append(res)
+      if "JPG" in item:
+        myListWithoutSlash.append(res)
 
 # for python-docs package
 # create words documents
