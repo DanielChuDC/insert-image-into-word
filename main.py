@@ -2,16 +2,10 @@
 # For reading file name
 import glob
 print(glob.glob('.'))
-# For getting the full path
-import pathlib
-print(pathlib.Path(__file__).parent.absolute())
-
 
 myList=[]
-# initializing split word 
-spl_word = '/'
 myListWithoutSlash=[]
-for file_name in glob.iglob(str(pathlib.Path(__file__).parent.absolute())+ '/imgs/*.*', recursive=True):
+for file_name in glob.iglob('./imgs/*.*', recursive=True):
   print(file_name)
   myList.append(file_name)
   # using split() 
@@ -19,17 +13,17 @@ for file_name in glob.iglob(str(pathlib.Path(__file__).parent.absolute())+ '/img
   res = file_name.split('/')
   for item in res:
       if "jpeg" in item:
-        myListWithoutSlash.append(res)
+        myListWithoutSlash.append(item)
       if "JPEG" in item:
-        myListWithoutSlash.append(res)
+        myListWithoutSlash.append(item)
       if "png" in item:
-        myListWithoutSlash.append(res)
+        myListWithoutSlash.append(item)
       if "PNG" in item:
-        myListWithoutSlash.append(res)
+        myListWithoutSlash.append(item)
       if "jpg" in item:
-        myListWithoutSlash.append(res)
+        myListWithoutSlash.append(item)
       if "JPG" in item:
-        myListWithoutSlash.append(res)
+        myListWithoutSlash.append(item)
 
 # for python-docs package
 # create words documents
