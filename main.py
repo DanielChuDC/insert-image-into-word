@@ -25,7 +25,7 @@ for file_name in glob.iglob('./imgs/*.*', recursive=True):
       if "JPG" in item:
         myListWithoutSlash.append(item)
 
-# for python-docs package
+# for python-docx package
 # create words documents
 from docx import Document
 from docx.shared import Cm
